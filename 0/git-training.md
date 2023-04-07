@@ -4,12 +4,6 @@ description: 깃 사용방법 연습하기
 
 # git training
 
-git 사용 경험이 별로 없다보니 어려움을 겪었습니다.&#x20;
-
-자주 사용해보며 이해하고 익혀야 할 필요성을 느끼게되었습니다.
-
-
-
 1. 과제는 Pull Request를 보내 제출한다. fork하여 내 깃허브에 같은 repository를 생성한다. 그리고 SSH 주소를 복사하여 로컬 환경에서 터미널로 프로젝트를 클론해준다.
 2. 터미널에서 clone하여 프로젝트를 내 컴퓨터 또는 노트북에 생성해준다.\
    (명령어 git clone 1번에서 복사한 주소 : git clone git@github.com:haegi-git/git-training.git)
@@ -28,5 +22,5 @@ git 사용 경험이 별로 없다보니 어려움을 겪었습니다.&#x20;
 9. origin 원격 저장소에 작업 브랜치 올리기 (명령어 git push origin 브랜치 이름)
 10. 과제 레포지토리를 들어가면 Compare & pull request 가 나타나는데 PR해주면 된다.
 
-
+git을 많이 사용해보지 않았기에 조금 어려웠음..
 
