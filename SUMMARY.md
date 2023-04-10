@@ -5,3 +5,4 @@
   * [사전 준비](0/undefined.md)
   * [git training](0/git-training.md)
 * [생존코스 1주차](1.md)
+  * [환경 설정](1/environment.md)
