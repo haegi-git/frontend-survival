@@ -6,3 +6,5 @@
   * [git training](0/git-training.md)
 * [생존코스 1주차](1.md)
   * [환경 설정](1/environment.md)
+  * [TypeScript](1/typescript.md)
+  * [React](1/react.md)

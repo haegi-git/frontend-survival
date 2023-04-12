@@ -14,6 +14,8 @@
 
 // cmd는 windows terminal 사용
 
+### 폴더 생성
+
     * mkdir 폴더이름 (폴더생성 명령어)
     * cd 폴더이름 (폴더 경로이동 명령어)
     * code . (vsc 열기, 나는 그냥 파일클릭해서 열었다.)
@@ -57,27 +59,114 @@
         + jest.config.js 파일을 생성준다.
         + 테스트에서 SWC를 사용할 수 있게 설정해두면 된다.
 
+<details>
+<summary>jest.config.js</summary>
+    
+```
+    jest.config.js
+    module.exports = {
+	testEnvironment: 'jsdom',
+	setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+	transform: {
+		'^.+\\.(t|j)sx?$': [
+			'@swc/jest',
+			{
+				jsc: {
+					parser: {
+						syntax: 'typescript',
+						jsx: true,
+						decorators: true,
+					},
+					transform: {
+						react: {
+							runtime: 'automatic',
+						},
+					},
+				},
+			},
+		],
+	},
+	testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
+};
+
+```
+
+</details>
+
 ### Parcel 설치
 
     * npm i -D parcel
         + package.json 파일을 조금 수정해준다.
+<details>
+<summary>package.json</summary>
+
+```
+{
+  "name": "frontend-survival-week01",
+  "version": "1.0.0",
+  "description": "이름 설명",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
+    "coverage": "jest --coverage --coverage-reporters html",
+    "watch:test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc/core": "^1.3.49",
+    "@swc/jest": "^0.2.24",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
+    "eslint-config-xo": "^0.43.1",
+    "eslint-config-xo-typescript": "^0.57.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
+```
+
+</details>
+
+## ESLint Auto fix
+
+    * vsc에서 컨트롤 + ,을 눌러 설정창 열기
+    * 설정에서 auto fix on save 가 있으면 체크 auto fix on save가 없으면 넘어가기
+    * 컨트롤 + , 눌러 설정을 열어준 뒤 code Actions on save를 검색
+    * 여기서 Editor : Code Actions On Save의 settings.json을 편집해준다.
+
+```
+"editor.codeActionsOnSave": {
+    
+    "source.fixAll.eslint": true
+},
+  "editor.formatOnSave": true,
+  ```
+    * 위 설정을 추가해준다.
+    * 그리고 다시 설정창을 열어서 formatter 검색 후 
+    Enables ESLint as a formatter 체크해주면 끝
 
 * * *
 
-## 여기까지가 세팅 및 설치 끝
+## 설정을 모두 끝내고
 
-독학을 하면서 이렇게까지 설정을 하고 작업을 해본적이 한번도 없었다.   
-그저 해본거라곤 확장도구에서 prettier 정도..?   
-
-eslint를 이런식으로 사용을 처음해봤는데 npm run lint를 사용했을 때   
-빨간 밑줄이 다 사라지는게 되게 기분이 좋았다...
-
-또한 리액트도 항상 create-react-app 폴더이름   
-이런식으로 생성해주는 방식을 사용해왔었는데   
-이렇게 하나씩 직접 설치하고 세팅하는건 처음이어서   
-꽤 번거로움을 느꼈다.. 나중에는 좀 더 편리하게 생성할 수 있을까?
-
-더 좋은 세팅이 있는지도 알아보면 좋을듯하다.   
-지금은 npm run lint를 사용할 때 열어둔 서버를 닫아야하는게  
-번거로운데 저장과 동시에 처리해줄 방법이 있을까..
-(밑줄이 거슬려..)
+좀 더 다른 설정도 추가하면 좋겠지만 아직은 무엇이 더 있는지 잘 모르기에 이정도의 설정에 익숙해져도 좋을 것 같다.
