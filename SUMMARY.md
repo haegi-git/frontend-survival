@@ -10,3 +10,5 @@
   * [React](1/react.md)
   * [테스팅도구](1/testinglibrary.md)
   * [Parcel & ESLint](1/parceleslint.md)
+* [생존코스 2주차](2.md)
+  * [JSX](2/jsx.md)

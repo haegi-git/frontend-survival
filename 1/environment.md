@@ -1,4 +1,5 @@
 ## 개발 환경 세팅
+
 * * *
 
 ### Node.js
@@ -6,6 +7,7 @@
 기본적으로 node.js를 기반이다. 수업에서는 더 간단한 deno 라는게 있다고 하였지만 처음 들어보는지라 추후 나중에 검색으로 구경이나 해봐야겠다.
 
 ### node.js는 항상 최신으로 받아두자
+
 - 노드의 버전 앞 숫자가 짝수면 LTS 홀수면 최신이다.
 - 항상 LTS를 사용했기에 LTS를 사용하기로했다.
 - 여러 강의에서도 들었지만 대다수의 에러는 node가 최신이 아니라서 에러가 나는경우가 많다.
@@ -21,7 +23,7 @@
     * code . (vsc 열기, 나는 그냥 파일클릭해서 열었다.)
 
 ### 작업폴더를 생성해주었으니 vsc에서 열어주자
-    
+
     * 작업할 폴더를 vsc 작업영역에서 띄워준 뒤 터미널 오픈
     * npm init -y (여기서 -y는 모두 yes해달라는 뜻)
         + 그리고 잊지말고 .gitignore 파일 만들어주기
@@ -61,32 +63,32 @@
 
 <details>
 <summary>jest.config.js</summary>
-    
+
 ```
     jest.config.js
     module.exports = {
-	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-	transform: {
-		'^.+\\.(t|j)sx?$': [
-			'@swc/jest',
-			{
-				jsc: {
-					parser: {
-						syntax: 'typescript',
-						jsx: true,
-						decorators: true,
-					},
-					transform: {
-						react: {
-							runtime: 'automatic',
-						},
-					},
-				},
-			},
-		],
-	},
-	testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
+ testEnvironment: 'jsdom',
+ setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+ transform: {
+  '^.+\\.(t|j)sx?$': [
+   '@swc/jest',
+   {
+    jsc: {
+     parser: {
+      syntax: 'typescript',
+      jsx: true,
+      decorators: true,
+     },
+     transform: {
+      react: {
+       runtime: 'automatic',
+      },
+     },
+    },
+   },
+  ],
+ },
+ testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
 };
 
 ```
@@ -161,6 +163,7 @@
 },
   "editor.formatOnSave": true,
   ```
+
     * 위 설정을 추가해준다.
     * 그리고 다시 설정창을 열어서 formatter 검색 후 
     Enables ESLint as a formatter 체크해주면 끝
