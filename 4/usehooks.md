@@ -83,3 +83,23 @@ function Counter() {
 localStorage와 JSON으로 객체 영속화
 
 이벤트를 통해 다른 컴포넌트와 동기화하는 게 매우 중요한 특징
+
+* * *
+
+### swr
+
+[공식 문서](https://swr.vercel.app/ko)
+
+데이터를 가져오기 위한 리액트 훅
+
+Fetch요청할 때 데이터 캐시이슈 대안
+
+* * *
+
+### React Query
+
+[참고 자료](https://kyounghwan01.github.io/blog/React/react-query/basic/#%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2)
+
+react query는 서버의 값을 클라이언트에 가져오거나 캐싱, 값 업데이트, 에러핸들링 등 비동기 과정을 편하게 하는데 사용된다.
+
+swr과 마찬가지로 캐싱에 좋은 장점이있고 리액트 훅과 사용하는 구조가 비슷하다.
