@@ -86,6 +86,7 @@ const config: PlaywrightTestConfig = {
  testDir: './tests',
  retries: 0,
  use: {
+  channel: 'chrome', // 크롬으로 진행한다는 설정
   baseURL: 'http://localhost:8080', // 리액트 앱의 포트
   headless: !!process.env.CI,
   screenshot: 'only-on-failure',
@@ -98,9 +99,11 @@ export default config;
 * tests/.eslintrc.js 파일 생성
 
 ```js
+// eslintrc.js
 module.exports = {
  env: {
   jest: false,
+//   jest와 playwright는 다르기에 jest를 꺼둔 모습
  },
  extends: ['plugin:playwright/playwright-test'],
  rules: {
@@ -114,3 +117,16 @@ module.exports = {
   * 참고로 여기서의 test와 expect는 jest와 다르며 그렇기에 eslint에서 jest를 꺼둔것이다.
 
 ```js
+
+import { test, expect } from '@playwright/test';
+
+test('Show all products', async ({ page }) => {
+ await page.goto('/');
+
+    const element = page.getByText('Apple')
+    // const element = page.getByText('Apple!!!!') 이걸 검사하면 없다고 알려줌
+
+ await expect(element).toBeVisible();
+//   Apple이 있는지 없는지 알아봐달라 라는 코드
+});
+```

@@ -26,3 +26,8 @@
   * [React Testing Library](5/reacttesinglibrary.md)
   * [MSW](5/msw.md)
   * [Playwright](5/playwright.md)
+* [생존코스 6주차](6.md)
+  * [External Store](6/externalstore.md)
+  * [TSyringe](6/tsyringe.md)
+  * [Redux](6/redux.md)
+  * [useStore-ts](6/usestore.md)
