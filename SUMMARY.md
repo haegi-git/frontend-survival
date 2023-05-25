@@ -31,3 +31,8 @@
   * [TSyringe](6/tsyringe.md)
   * [Redux](6/redux.md)
   * [useStore-ts](6/usestore.md)
+* [생존코스 7주차](7.md)
+  * [Routing](7/Routing.md)
+  * [Routes](7/Routes.md)
+  * [Router](7/Router.md)
+  * [Navigation](7/Navigation.md)
