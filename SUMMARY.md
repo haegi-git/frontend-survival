@@ -38,3 +38,8 @@
   * [Navigation](7/Navigation.md)
 * [생존코스 8주차](8.md)
   * [Design System](8/DesignSystem.md)
+  * [Style Basics](8/StyleBasics.md)
+  * [CSS in JS](8/CSSinJS.md)
+  * [styled-components](8/styled-components.md)
+  * [props와attrs](8/PropsAttrs.md)
+  * [Global Style & Theme](8/GlobalStyleTheme.md)
